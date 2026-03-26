@@ -23,10 +23,10 @@ echo %COLOR4%   88ood8 88 88ood8 88oodP  YbodP  88  Y8 dP""""Yb
 echo %COLOR5%   SIDM - lilbona
 echo %ESC%[0m
 echo %COLOR1% -----------------------------------------------------
-
+echo.
 
 echo.             Enter Steam game id
-echo.             Use /update for updates 
+echo.             Use /update for updates
 
 :askAppID
 echo.
@@ -143,8 +143,8 @@ exit
 echo.
 echo Checking for updates...
 
-:: 🔴 IDE ÍRD A SAJÁT LINKED!
-set "URL=https://raw.githubusercontent.com/bunnyfn-w/sidm2/refs/heads/main/sidm.bat"
+:: 🔴 IDE ÍRD A SAJÁT RAW LINKED!
+set "URL=https://raw.githubusercontent.com/bunnyfn-w/sidm2/main/sidm.bat"
 
 set "NEWFILE=%TEMP%\update.bat"
 
@@ -160,7 +160,8 @@ echo Update downloaded!
 
 timeout /t 2 >nul
 
-copy /y "%NEWFILE%" "%~f0" >nul
+:: Biztos felülírás
+move /y "%NEWFILE%" "%~f0" >nul
 
 echo Update applied! Restarting...
 
