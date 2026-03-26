@@ -127,7 +127,7 @@ echo.
 echo Checking for updates...
 
 :: 🔴 IDE ÍRD A SAJÁT LINKED!
-set "URL=https://raw.githubusercontent.com/bunnyfn-w/sidm/refs/heads/main/sidm.bat"
+set "URL=https://raw.githubusercontent.com/bunnyfn-w/sidm2/refs/heads/main/sidm.bat"
 
 set "NEWFILE=%TEMP%\update.bat"
 
