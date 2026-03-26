@@ -29,7 +29,7 @@ echo.             Use /update for updates
 
 :askAppID
 echo.
-set /p APPID="Enter Steam AppID (e.g. 730) or type /update: "
+set /p APPID="Enter Steam AppID (e.g. 730) : "
 
 :: UPDATE COMMAND
 if /I "%APPID%"=="/update" goto update
