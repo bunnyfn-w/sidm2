@@ -21,7 +21,7 @@ echo %COLOR2%   88     88 88     88__dP dP   Yb 88Yb88   dPYb
 echo %COLOR3%   88  .o 88 88  .o 88""Yb Yb   dP 88 Y88  dP__Yb
 echo %COLOR4%   88ood8 88 88ood8 88oodP  YbodP  88  Y8 dP""""Yb
 echo %COLOR5%  
-echo %ESC%[0m   SIDM - lilbona
+echo %COLOR5%   SIDM - lilbona
 echo %COLOR1% -----------------------------------------------------
 echo.
 
