@@ -2,7 +2,6 @@
 setlocal enabledelayedexpansion
 title SIDM - lilbona
 color 5
-
 :: Enable ANSI colors
 for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 
