@@ -6,11 +6,20 @@ color 5
 :: Enable ANSI colors
 for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 
+:: Színkódok: lila -> kék
+set "COLOR1=%ESC%[38;5;93m"   :: lila
+set "COLOR2=%ESC%[38;5;99m"   :: liláskék
+set "COLOR3=%ESC%[38;5;105m"  :: kékeslila
+set "COLOR4=%ESC%[38;5;111m"  :: világoskék
+set "COLOR5=%ESC%[38;5;45m"   :: kék
+
+:: Banner
 echo.
-echo %ESC%[38;5;93m   88     88 88     88""Yb  dP"Yb  88b 88    db    
-echo %ESC%[38;5;99m   88     88 88     88__dP dP   Yb 88Yb88   dPYb   
-echo %ESC%[38;5;105m  88  .o 88 88  .o 88""Yb Yb   dP 88 Y88  dP__Yb  
-echo %ESC%[38;5;111m  88ood8 88 88ood8 88oodP  YbodP  88  Y8 dP""""Yb 
+echo %COLOR1%   88     88 88     88""Yb  dP"Yb  88b 88    db
+echo %COLOR2%   88     88 88     88__dP dP   Yb 88Yb88   dPYb
+echo %COLOR3%   88  .o 88 88  .o 88""Yb Yb   dP 88 Y88  dP__Yb
+echo %COLOR4%   88ood8 88 88ood8 88oodP  YbodP  88  Y8 dP""""Yb
+echo %COLOR5%   SteamIDMaker - lilbona
 echo %ESC%[0m
 echo.
 
