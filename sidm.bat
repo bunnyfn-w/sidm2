@@ -1,6 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
-title SteamIDMaker - lilbona
+title SIDM - lilbona
 color 5
 
 :: Enable ANSI colors
