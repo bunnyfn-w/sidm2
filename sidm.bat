@@ -1,16 +1,17 @@
 @echo off
 setlocal enabledelayedexpansion
-title SIDM - lilbona
+title SteamIDMaker - lilbona
 color 5
+
 :: Enable ANSI colors
 for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
 
-:: Színkódok: lila -> kék
-set "COLOR1=%ESC%[38;5;93m"   :: lila
-set "COLOR2=%ESC%[38;5;99m"   :: liláskék
-set "COLOR3=%ESC%[38;5;105m"  :: kékeslila
-set "COLOR4=%ESC%[38;5;111m"  :: világoskék
-set "COLOR5=%ESC%[38;5;45m"   :: kék
+:: Gradient lila -> kék
+set "COLOR1=%ESC%[38;5;93m"
+set "COLOR2=%ESC%[38;5;99m"
+set "COLOR3=%ESC%[38;5;105m"
+set "COLOR4=%ESC%[38;5;111m"
+set "COLOR5=%ESC%[38;5;45m"
 
 :: Banner
 echo.
@@ -19,8 +20,8 @@ echo %COLOR1%   88     88 88     88""Yb  dP"Yb  88b 88    db
 echo %COLOR2%   88     88 88     88__dP dP   Yb 88Yb88   dPYb
 echo %COLOR3%   88  .o 88 88  .o 88""Yb Yb   dP 88 Y88  dP__Yb
 echo %COLOR4%   88ood8 88 88ood8 88oodP  YbodP  88  Y8 dP""""Yb
-echo %COLOR5%  
 echo %COLOR5%   SIDM - lilbona
+echo %ESC%[0m
 echo %COLOR1% -----------------------------------------------------
 echo.
 
@@ -136,35 +137,25 @@ pause
 exit
 
 :: =========================
-:: UPDATE SYSTEM
+:: UPDATE SYSTEM (STABIL)
 :: =========================
 :update
 echo.
 echo Checking for updates...
 
 :: 🔴 IDE ÍRD A SAJÁT RAW LINKED!
-set "URL=https://raw.githubusercontent.com/bunnyfn-w/sidm2/main/sidm.bat"
+set "URL=https://raw.githubusercontent.com/bunnyfn-w/sidm2/main/update_helper.bat"
 
-set "NEWFILE=%TEMP%\update.bat"
+set "HELPER=%TEMP%\update_helper.bat"
 
-powershell -Command "Invoke-WebRequest -Uri '%URL%' -OutFile '%NEWFILE%'"
+powershell -Command "Invoke-WebRequest -Uri '%URL%' -OutFile '%HELPER%' -UseBasicParsing"
 
-if not exist "%NEWFILE%" (
-    echo Failed to download update!
+if not exist "%HELPER%" (
+    echo Failed to download update helper!
     pause
     goto askAppID
 )
 
-echo Update downloaded!
-
-timeout /t 2 >nul
-
-:: Biztos felülírás
-move /y "%NEWFILE%" "%~f0" >nul
-
-echo Update applied! Restarting...
-
-timeout /t 2 >nul
-
-start "" "%~f0"
+:: Start helper and exit main script
+start "" "%HELPER%" "%~f0"
 exit
