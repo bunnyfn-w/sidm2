@@ -3,11 +3,16 @@ setlocal enabledelayedexpansion
 title SteamIDMaker - lilbona
 color 5
 
+:: Enable ANSI colors
+for /f %%a in ('echo prompt $E ^| cmd') do set "ESC=%%a"
+
 echo.
-echo.        88     88 88     88""Yb  dP"Yb  88b 88    db    
-echo.        88     88 88     88__dP dP   Yb 88Yb88   dPYb   
-echo.        88  .o 88 88  .o 88""Yb Yb   dP 88 Y88  dP__Yb  
-echo.        88ood8 88 88ood8 88oodP  YbodP  88  Y8 dP""""Yb 
+echo %ESC%[38;5;93m   88     88 88     88""Yb  dP"Yb  88b 88    db    
+echo %ESC%[38;5;99m   88     88 88     88__dP dP   Yb 88Yb88   dPYb   
+echo %ESC%[38;5;105m  88  .o 88 88  .o 88""Yb Yb   dP 88 Y88  dP__Yb  
+echo %ESC%[38;5;111m  88ood8 88 88ood8 88oodP  YbodP  88  Y8 dP""""Yb 
+echo %ESC%[0m
+echo.
 
 
 echo.             Enter Steam game id
