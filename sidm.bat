@@ -144,7 +144,7 @@ echo.
 echo Checking for updates...
 
 :: 🔴 IDE ÍRD A SAJÁT RAW LINKED!
-set "URL=https://raw.githubusercontent.com/bunnyfn-w/sidm2/main/update_helper.bat"
+set "URL=https://raw.githubusercontent.com/bunnyfn-w/sidm2/refs/heads/main/sidm.bat"
 
 set "HELPER=%TEMP%\update_helper.bat"
 
